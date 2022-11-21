@@ -1,9 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import List from './List'
 import FormInput from './FormInput'
 
 function App() {
-  const [items, setItems] = useState([])
+
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem('items')) || [])
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items))
+  }, [items])
 
   const addTask = (userInput) => {
     if (userInput) {

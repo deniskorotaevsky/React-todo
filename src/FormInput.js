@@ -21,7 +21,7 @@ function FormInput({ addTask }) {
                 onChange={handleChange}
                 placeholder="Введите значение..."
             />
-            <button>Сохранить</button>
+            <button>Добавить</button>
         </form>
     )
 }
