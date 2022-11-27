@@ -4,6 +4,9 @@ import FormInput from './FormInput'
 
 function App() {
 
+  const [edit, setEdit] = useState(null)
+  const [value, setValue] = useState('')
+
   const [items, setItems] = useState(
     JSON.parse(localStorage.getItem('items')) || [])
 
@@ -23,17 +26,31 @@ function App() {
   }
 
   const removeTask = (id) => {
-    const newArr = [...items.filter((todo) => todo.id !== id)]
-    setItems(newArr);
+    setItems([...items.filter((todo) => todo.id !== id)]);
   }
 
   const handleToggle = (id) => {
-    const newSelection = [
+    setItems([
       ...items.map((todo) =>
         todo.id === id ? { ...todo, selection: !todo.selection } : { ...todo }
       )
-    ]
-    setItems(newSelection)
+    ])
+  }
+
+  const editTask = (id, task) => {
+    setEdit(id)
+    setValue(task)
+  }
+
+  const saveTodo = (id) => {
+    let newTodo = [...items].map((item) => {
+      if (item.id == id) {
+        item.task = value
+      }
+      return item
+    })
+    setItems(newTodo)
+    setEdit(null)
   }
 
   return (
@@ -47,6 +64,11 @@ function App() {
             key={todo.id}
             toggleTask={handleToggle}
             removeTask={removeTask}
+            editTask={editTask}
+            edit={edit}
+            value={value}
+            setValue={setValue}
+            saveTodo={saveTodo}
           />
         )
       })}
