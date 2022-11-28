@@ -6,7 +6,6 @@ function App() {
 
   const [edit, setEdit] = useState(null)
   const [value, setValue] = useState('')
-
   const [items, setItems] = useState(
     JSON.parse(localStorage.getItem('items')) || [])
 
