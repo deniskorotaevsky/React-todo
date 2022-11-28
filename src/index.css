@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  width: 450px;
+  width: 650px;
   margin: 0 auto;
   text-align: left;
   margin-top: 15px;
@@ -49,7 +49,7 @@ button {
   color: #fff;
 }
 
-.item-delete, 
+.item-delete,
 .item-edit {
   cursor: pointer;
   float: right;
@@ -81,4 +81,10 @@ img {
 
 .todo-ac {
   padding: 0 15px;
+  max-height: 64px;
+}
+
+.item-todo .inputEdit {
+  border-radius: 4px;
+  width: 300px;
 }

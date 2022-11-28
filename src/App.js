@@ -14,7 +14,7 @@ function App() {
   }, [items])
 
   const addTask = (userInput) => {
-    if (userInput) {
+    if (userInput.trim().length !== 0) {
       const newItem = {
         id: Math.random().toString(11),
         task: userInput,
