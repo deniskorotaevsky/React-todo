@@ -16,9 +16,9 @@ body {
 .item-todo {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center;
   padding: 15px;
-  width: auto;
+  /* width: auto; */
   max-width: 650px;
   margin: auto;
   text-align: left;
@@ -37,6 +37,8 @@ body {
   display: flex;
   cursor: pointer;
   font-size: 20px;
+  width: 530px;
+  overflow: hidden;
 }
 
 .App input {
@@ -66,6 +68,7 @@ button {
   float: right;
   position: relative;
   margin-left: 18px;
+
 }
 
 .selection {
@@ -96,14 +99,18 @@ img {
 }
 
 .item-todo .inputEdit {
-  border-radius: 4px;
-  width: 300px;
+  width: auto;
+  border: none;
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
-
 
 @media (max-width: 767px) {
   .item-todo {
     max-width: 90%;
+  }
+
+  .item-todo .item-text {
+    width: 70vw;
   }
 }
 
@@ -111,5 +118,15 @@ img {
   .item-todo {
     max-width: 90%;
     padding: 12px;
+  }
+
+  .item-todo .item-text {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .item-todo .item-text {
+    width: 60vw;
   }
 }
