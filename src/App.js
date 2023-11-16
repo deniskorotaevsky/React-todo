@@ -18,7 +18,7 @@ function App() {
       const newItem = {
         id: Math.random().toString(11),
         task: userInput,
-        selection: false
+        selection: true
       }
       setItems([...items, newItem])
     }

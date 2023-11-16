@@ -1,6 +1,6 @@
-import remove from './remove.png';
-import pencil from './pencil.png';
-import checkMark from './checkMark.png';
+import remove from './image/remove.png';
+import pencil from './image/pencil.png';
+import checkMark from './image/checkMark.png';
 
 function List({ todo, toggleTask, removeTask, editTask, edit, value, setValue, saveTodo }) {
     return (
